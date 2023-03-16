@@ -97,8 +97,8 @@ public class AddressBookController {
         LambdaQueryWrapper<AddressBook> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(null != addressBook.getUserId(), AddressBook::getUserId, addressBook.getUserId());
         queryWrapper.orderByDesc(AddressBook::getUpdateTime);
-
         //SQL:select * from address_book where user_id = ? order by update_time desc
         return Result.success(addressBookService.list(queryWrapper));
+
     }
 }
